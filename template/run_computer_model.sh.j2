@@ -40,7 +40,7 @@ ln -sf `realpath ../output`
 ln -sf `realpath ../../input_data`
 
 echo "Iteration $ITERATION Model {{ run.idx }}"
-/data/hpcdata/users/thozwa/.juliaup/bin/julia --project -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/RJArthern/WAVI.jl.git",rev="Alex-EKF"));Pkg.instantiate()'
-/data/hpcdata/users/thozwa/.juliaup/bin/julia --project run_computer_model.jl {{ run.out_dir }} {{ run.data_path }} $ITERATION {{ run.idx + 1 }}
+/data/hpcdata/users/miradh/.juliaup/bin/julia --project -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/RJArthern/WAVI.jl.git",rev="Alex-EKF"));Pkg.instantiate()'
+/data/hpcdata/users/miradh/.juliaup/bin/julia --project run_computer_model.jl {{ run.out_dir }} {{ run.data_path }} $ITERATION {{ run.idx + 1 }}
 
 echo -ne "\n{{ run.idx }}" >>RUN_ITERS
